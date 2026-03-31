@@ -88,6 +88,19 @@ def get_activities():
     return activities
 
 
+@app.get("/mcp-status")
+def get_mcp_status():
+    """MCP integration status endpoint for Copilot / skills exercise."""
+    # This is a placeholder endpoint that demonstrates this app is ready
+    # for Model Context Protocol (MCP) integration and health checks.
+    return {
+        "status": "ready",
+        "mcp_integration": True,
+        "message": "MCP + Copilot exercise integration point is configured",
+        "managed_by_issue": 1
+    }
+
+
 @app.post("/activities/{activity_name}/signup")
 def signup_for_activity(activity_name: str, email: str):
     """Sign up a student for an activity"""
